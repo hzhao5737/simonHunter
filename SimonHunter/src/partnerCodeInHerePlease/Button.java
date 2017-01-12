@@ -8,8 +8,13 @@ import simonHunter.ButtonInterfaceHunter;
 
 public class Button implements ButtonInterfaceHunter {
 
+	private Color color;
+	private Action action;
+	private int y;
+	private int x;
+	
 	public Button() {
-		super(0, 0, 50, 50);
+		super();
 	}
 
 	@Override
@@ -44,19 +49,16 @@ public class Button implements ButtonInterfaceHunter {
 
 	@Override
 	public int getX() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.x;
 	}
 
 	@Override
 	public int getY() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.y;
 	}
 
 	@Override
 	public boolean isAnimated() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
