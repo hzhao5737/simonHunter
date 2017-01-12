@@ -14,7 +14,7 @@ public class Progress extends Component implements ProgressInterfaceHunter {
 	private String sequenceString;
 	private boolean gameOver;
 
-	public Progress(int x, int y, int w, int h) {
+	public Progress() {
 		super(50, 50, 120, 50);
 	}
 
