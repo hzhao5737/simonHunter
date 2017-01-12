@@ -9,12 +9,12 @@ import simonHunter.ButtonInterfaceHunter;
 public class Button implements ButtonInterfaceHunter {
 
 	public Button() {
-		// TODO Auto-generated constructor stub
+		super(0, 0, 50, 50);
 	}
 
 	@Override
 	public void act() {
-		// TODO Auto-generated method stub
+		action.act();
 
 	}
 
