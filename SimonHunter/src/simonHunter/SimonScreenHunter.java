@@ -133,10 +133,7 @@ public class SimonScreenHunter extends ClickableScreen implements Runnable {
 	}
 
 	private ProgressInterfaceHunter getProgress() {
-		/**
-		Placeholder until partner finishes implementation of ProgressInterface
-		 */
-		return null;
+		return new Progress();
 	}
 	
 	private void gameOver() {
