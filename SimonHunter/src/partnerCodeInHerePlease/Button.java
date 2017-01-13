@@ -63,7 +63,7 @@ public class Button extends Component implements ButtonInterfaceHunter {
 
 	@Override
 	public void dim() {
-		displayColor = Color.white;
+		displayColor = Color.black;
 		isHighlighted = false;
 		update();
 	}

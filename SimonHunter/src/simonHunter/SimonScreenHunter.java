@@ -57,7 +57,7 @@ public class SimonScreenHunter extends gui6.ClickableScreen implements Runnable 
 			}
 			b = m.getButton();
 			b.highlight();
-			int sleepTime = (int)(2000*(2.0/(roundNumber+2)));
+			int sleepTime = (int)(1000*(2.0/(+2)));
 			try {
 				Thread.sleep((long)sleepTime);
 			} catch (InterruptedException e) {
@@ -69,8 +69,8 @@ public class SimonScreenHunter extends gui6.ClickableScreen implements Runnable 
 
 	@Override
 	public void initAllObjects(List<Visible> viewObjects) {
-		Color[] colors = {Color.red, Color.orange, Color.yellow, Color.green, Color.blue, Color.black};
-		String[] names = {"RED", "ORANGE", "YELLOW", "GREEN", "BLUE", "BLACK"};
+		Color[] colors = {Color.red, Color.orange, Color.yellow, Color.green, Color.blue, Color.white};
+		String[] names = {"RED", "ORANGE", "YELLOW", "GREEN", "BLUE", "WHITE"};
 		int buttonCount = 6;
 		button = new ButtonInterfaceHunter[buttonCount];
 		for(int i = 0; i < buttonCount; i++ ){
