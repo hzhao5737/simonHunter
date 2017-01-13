@@ -2,8 +2,8 @@ package simonHunter;
 
 import java.awt.Color;
 
-import gui.components.Action;
-import gui.components.Clickable;
+import gui6.components.Action;
+import gui6.components.Clickable;
 
 public interface ButtonInterfaceHunter extends Clickable {
 

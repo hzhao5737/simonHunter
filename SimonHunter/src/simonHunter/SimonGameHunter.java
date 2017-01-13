@@ -1,8 +1,6 @@
 package simonHunter;
 
-import gui.GUIApplication;
-
-public class SimonGameHunter extends GUIApplication {
+public class SimonGameHunter extends gui6.GUIApplication {
 
 	public SimonGameHunter(int width, int height) {
 		super(width, height);

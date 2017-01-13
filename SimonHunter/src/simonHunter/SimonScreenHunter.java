@@ -4,15 +4,14 @@ import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 
-import gui.components.Action;
-import gui.components.TextLabel;
-import gui.components.Visible;
-import gui.screens.ClickableScreen;
+import gui6.components.Action;
+import gui6.components.TextLabel;
+import gui6.components.Visible;
 import partnerCodeInHerePlease.Button;
 import partnerCodeInHerePlease.Move;
 import partnerCodeInHerePlease.Progress;
 
-public class SimonScreenHunter extends ClickableScreen implements Runnable {
+public class SimonScreenHunter extends gui6.ClickableScreen implements Runnable {
 
 	private ProgressInterfaceHunter progress;
 	private ButtonInterfaceHunter[] button;
@@ -70,18 +69,17 @@ public class SimonScreenHunter extends ClickableScreen implements Runnable {
 
 	@Override
 	public void initAllObjects(List<Visible> viewObjects) {
-		Color[] colors = {Color.red, Color.blue, new Color(240,160,70), new Color(20,255,140), Color.yellow, new Color(180,90,210)};
-		String[] names = {"RED", "BLUE", "ORANGE", "GREEN", "YELLOW", "PURPLE"};
-		int buttonCount = 6;
+		Color[] colors = {Color.red, Color.blue, new Color(240,160,70), Color.yellow};
+		String[] names = {"RED", "BLUE", "ORANGE", "YELLOW"};
+		int buttonCount = 4;
 		button = new ButtonInterfaceHunter[buttonCount];
 		for(int i = 0; i < buttonCount; i++ ){
 			button[i] = getAButton();
 			button[i].setName(names[i]);
 			button[i].setColor(colors[i]);
-			button[i].setX(160 + (int)(100*Math.cos(i*2*Math.PI/(buttonCount))));
-			button[i].setY(200 - (int)(100*Math.sin(i*2*Math.PI/(buttonCount))));
+			button[i].setX(100 + (i *50));
+			button[i].setY(200);
 			final ButtonInterfaceHunter b = button[i];
-			System.out.println(b+" has x = "+b.getX()+", y ="+b.getY());
 			b.dim();
 			button[i].setAction(new Action() {
 				public void act() {
@@ -110,12 +108,11 @@ public class SimonScreenHunter extends ClickableScreen implements Runnable {
 						}
 					}
 				}
-
 			});
 			viewObjects.add(button[i]);
 		}
 		progress = getProgress();
-		label = new TextLabel(130,230,300,40,"Let's play Simon!");
+		label = new TextLabel(180,30,300,40,"Let's play Simon!");
 		moves = new ArrayList<MoveInterfaceHunter>();
 		//add 2 moves to start
 		lastSelectedButton = -1;

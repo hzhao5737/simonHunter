@@ -5,15 +5,14 @@ import simonHunter.MoveInterfaceHunter;
 
 public class Move implements MoveInterfaceHunter {
 	
-	private ButtonInterfaceHunter button; 
+	private ButtonInterfaceHunter b;
+
+	public Move(ButtonInterfaceHunter b) {
+		this.b = b;
+	}
 
 	@Override
 	public ButtonInterfaceHunter getButton() {
-		return button;
+		return b;
 	}
-	
-	public Move(ButtonInterfaceHunter button) {
-		this.button = button;
-	}
-
 }

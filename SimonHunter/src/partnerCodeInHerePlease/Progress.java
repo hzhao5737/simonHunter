@@ -5,66 +5,55 @@ import java.awt.FontMetrics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 
-import gui.components.Component;
+import gui6.components.Component;
 import simonHunter.ProgressInterfaceHunter;
 
 public class Progress extends Component implements ProgressInterfaceHunter {
 	
-	private String roundString;
-	private String sequenceString;
-	private boolean gameOver;
+	private String round;
+	private String sequence;
+	private boolean isGameOver;
 
 	public Progress() {
-		super(50, 50, 120, 50);
+		super(30, 30, 120, 50);
 	}
 
 	@Override
-	public void gameOver() {
-		gameOver = true;
-		update();
-
+	public void update(Graphics2D g) {
+		g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+		FontMetrics fm = g.getFontMetrics();
+		if(isGameOver){
+			g.setColor(new Color(255,55,90));
+			g.fillRect(0, 0, 120, 50);
+			g.setColor(Color.white);
+			String go = "GAME OVER!";
+			g.drawString(go, (120 - fm.stringWidth(go))/2, 20);
+			g.drawString(sequence, (120 - fm.stringWidth(sequence))/2, 40);
+		}else{
+			g.setColor(Color.white);
+			g.fillRect(0, 0, 120, 50);
+			g.setColor(Color.black);
+			g.drawRect(0, 0, 120-1, 50-1);
+			if(round !=null && sequence != null){
+				g.drawString(round, (120 - fm.stringWidth(round))/2, 20);
+				g.drawString(sequence, (120 - fm.stringWidth(sequence))/2, 40);
+			}
+		}
 	}
 
-	@Override
 	public void setRound(int roundNumber) {
-		roundString = "Round: " + roundNumber;
+		round = "Round "+roundNumber;
 		update();
+	}
 
+	public void gameOver() {
+		isGameOver = true;
+		update();
 	}
 
 	@Override
 	public void setSequenceSize(int size) {
-		sequenceString = "Sequence Size: " + size;
+		sequence = "Sequence length "+size;
 		update();
-
 	}
-
-	@Override
-	public void update(Graphics2D arg0) {
-		String gameOverString = "You lost!";
-		
-		arg0.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-		FontMetrics fm = arg0.getFontMetrics();
-		
-		arg0.setColor(new Color(220, 220, 220));
-		arg0.fillRect(0, 0, 120, 50);
-		arg0.setColor(Color.black);
-		
-		if(gameOver){
-			arg0.setColor(Color.red);
-			
-			arg0.drawString(gameOverString, (120 - fm.stringWidth(gameOverString)) / 2, 20);
-
-		}else{
-			
-			if(roundString != null && sequenceString != null){
-
-				arg0.drawString(roundString, (120 - fm.stringWidth(roundString)) / 2, 20);
-			}
-		}
-		
-		arg0.drawString(sequenceString, (120 - fm.stringWidth(sequenceString)) / 2, 40);
-
-	}
-
 }

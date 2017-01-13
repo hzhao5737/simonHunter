@@ -1,6 +1,6 @@
 package simonHunter;
 
-import gui.components.Visible;
+import gui6.components.Visible;
 
 public interface ProgressInterfaceHunter extends Visible {
 
