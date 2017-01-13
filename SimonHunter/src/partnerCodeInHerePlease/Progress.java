@@ -30,7 +30,7 @@ public class Progress extends Component implements ProgressInterfaceHunter {
 			g.drawString(go, (120 - fm.stringWidth(go))/2, 20);
 			g.drawString(sequence, (120 - fm.stringWidth(sequence))/2, 40);
 		}else{
-			g.setColor(Color.white);
+			g.setColor(Color.blue);
 			g.fillRect(0, 0, 120, 50);
 			g.setColor(Color.black);
 			g.drawRect(0, 0, 120-1, 50-1);
