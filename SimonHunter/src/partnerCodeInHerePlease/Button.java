@@ -1,12 +1,8 @@
 package partnerCodeInHerePlease;
 
 import java.awt.Color;
-import java.awt.Font;
-import java.awt.FontMetrics;
 import java.awt.Graphics2D;
-import java.awt.Polygon;
 import java.awt.RenderingHints;
-import java.awt.image.BufferedImage;
 
 import gui6.components.Action;
 import gui6.components.Component;
